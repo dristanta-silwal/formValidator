@@ -1,0 +1,228 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&family=Tiro+Kannada&display=swap');
+
+:root{
+    --font-family1: 'Tiro Kannada', serif;
+    --font-family2: 'Roboto Mono', monospace;
+    --primary-color: #121E43;
+    --secondary-color: #ececec;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    min-height: 100vh;
+    font-family: var(--font-family1);
+
+    background-color: var(--primary-color);
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    box-shadow: 0 2px 10px whitesmoke;
+    border-radius: 10px;
+    
+    width: 400px;
+    max-width: 100%;
+
+    overflow:  hidden;
+}
+
+.header{
+    padding: 20px 40px;
+}
+
+.header h2{
+    margin: 0;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.form-control input{
+    border: 2px solid black;
+    border-radius: 4px;
+    display: block;
+    font-size: 14px;
+    font-family: inherit;
+    padding: 10px;
+    width: 100%;
+}
+
+.form-control.success input{
+    border-color: #2ecc71;
+}
+.form-control.error input{
+    border-color: #e74c3c;
+}
+
+.form-control i{
+    visibility: hidden;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+}
+
+.form-control.success i.fa-check-circle{
+    visibility: visible;
+    color: #2ecc71;
+}
+
+.form-control.error i.fa-exclamation-circle{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form-control small{
+    visibility: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.form-control.error small{
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.form button{
+    background-color: var(--primary-color);
+    color: white;
+    width: 100%;
+
+    border: 2px solid rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 20px;
+    display: block;
+
+    font-size: 16px;
+    font-family: inherit;
+}
+
+
+
+.socialpanel-container{
+    position: fixed;
+    right: 20px;
+    bottom: 11%;
+    padding-top: 20px;
+    overflow: hidden;
+}
+
+.social-panel{
+    transform: translateY(100%);
+    transition: transform 0.1s ease-in-out;
+    transition: 0.3s ease;
+}
+
+.social-panel.visible{
+    transform: translateY(-20px);
+    transition: 0.3s ease;
+}
+
+.floating-btn.visible{
+    transform: rotate(90deg);
+    transition: 0.4s ease;
+}
+
+.social-panel button.close-btn {
+	border: 0;
+	background-color: white;
+    color: black;
+	cursor: pointer;
+	font-size: 1rem;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+    border-radius: 50%;
+}
+.social-panel button.close-btn:hover{
+    background-color: red;
+    color: white;
+}
+
+.social-panel ul {
+	display: flex;
+    flex-direction: column;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+.social-panel ul li {
+	margin: 10px 0;
+}
+
+.social-panel ul li a {
+	border: 2px solid var(--secondary-color);
+	border-radius: 50%;
+	color: var(--secondary-color);
+	font-size: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 50px;
+	width: 50px;
+	text-decoration: none;
+}
+
+.social-panel ul li a:hover {
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
+	box-shadow: 0 9px 12px -9px #FF6A00;
+}
+
+.floating-btn{
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    display: block;
+    padding: 0.6rem 1.2rem;
+    font-size: 2rem;
+
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    z-index: 999;
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.floating-btn:hover{
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    box-shadow: 0 0 22px white;
+}
+
+@media screen and (max-width:400px){
+    .form{
+        padding: 10px;
+    }
+    .floating-btn{
+        padding: 10px;
+        font-size: 20px;
+    }
+}
+
